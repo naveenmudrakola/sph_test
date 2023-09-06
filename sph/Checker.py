@@ -4,7 +4,6 @@ import requests
 from datetime import datetime, timedelta
 from flask import Flask, jsonify
 import threading
-from multiprocessing import Process
 
 app = Flask(__name__)
 statuses = []
@@ -48,7 +47,8 @@ def get_status():
 
 if __name__ == "__main__":
     threading.Thread(target=check_urls).start()
-    app.run(debug=True, port=5000, threaded=True, use_reloader=False)
+    #app.run(debug=True, port=5000, threaded=True, use_reloader=False)
+    app.run(host='0.0.0.0', port=5000)
 
     
     
