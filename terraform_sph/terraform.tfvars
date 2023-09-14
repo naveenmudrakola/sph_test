@@ -1,0 +1,12 @@
+aws_region                   = "us-east-1"
+ecs_cluster_name             = "sph-cluster"
+task_definition_family       = "sph"
+task_definition_cpu          = "256"
+task_definition_memory       = "512"
+container_image              = "436728418105.dkr.ecr.us-east-1.amazonaws.com/sph-app-repo:latest"
+container_port               = 5000
+host_port                    = 5000
+ecs_service_desired_count    = 1
+network_subnets              = ["subnet-5235330e", "subnet-ad8ab0ca"]
+security_groups              = ["sg-05c303773d7b1ea2c"]
+iam_role_name                = "ecs_execution_role"
